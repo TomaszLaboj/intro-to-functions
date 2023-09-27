@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "eslint": ">=5.16.0"
+  }
+}

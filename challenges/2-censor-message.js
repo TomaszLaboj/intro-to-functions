@@ -5,25 +5,35 @@
 
  @param {string} message - original message to be 'censored'
  @param {array} listOfWords - list of words to search and censor
- @returns {string} censoredMessage  
+ @returns {string} censoredMessage
  */
 
- function censorMessage(message,listOfWords){
-    const rawWords = message.split(' ');
-    const scrubbedWords = [];
-    for (let word of rawWords){
-    
-        if(listOfWords.includes(word.toLowerCase())){
-            scrubbedWords.push('*****');
-            
-        }else{
-            scrubbedWords.push(word)
-        }
+function censorMessage(message, listOfWords) {
+  const rawWords = message.split(" ");
+  const scrubbedWords = [];
+  for (const word of rawWords) {
+    if (listOfWords.includes(word.toLowerCase())) {
+      scrubbedWords.push("*****");
+    } else {
+      scrubbedWords.push(word);
     }
-    const scrubbedMessage = scrubbedWords.join(' ');
+  }
+  const scrubbedMessage = scrubbedWords.join(" ");
 
-    return scrubbedMessage;
- }
- console.log(censorMessage("don't mess with cats", ["mess"]), 'should be ', "don't ***** with cats");
- console.log(censorMessage("Are you sure that this is safe", ["are", "is"]),'should be ', "***** you sure that this ***** safe");
- console.log(censorMessage("I CANNOT HELP YOU", ["can", "not", "help", "you"]),'should be ',"I CANNOT ***** *****");
+  return scrubbedMessage;
+}
+console.log(
+  censorMessage("don't mess with cats", ["mess"]),
+  "should be ",
+  "don't ***** with cats"
+);
+console.log(
+  censorMessage("Are you sure that this is safe", ["are", "is"]),
+  "should be ",
+  "***** you sure that this ***** safe"
+);
+console.log(
+  censorMessage("I CANNOT HELP YOU", ["can", "not", "help", "you"]),
+  "should be ",
+  "I CANNOT ***** *****"
+);
