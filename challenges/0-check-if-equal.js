@@ -1,3 +1,11 @@
+"use strict";
+
+/**
+ *
+ * @param {number} numOne
+ * @param {number} numTwo
+ * @return {Boolean};
+ */
 function isEqual(numOne, numTwo) {
   if (numOne === numTwo) {
     return true;
